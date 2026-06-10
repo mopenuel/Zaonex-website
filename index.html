@@ -107,39 +107,9 @@ nav {
 .nav-inner {
   max-width: 1180px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 32px; height: 70px;
+  padding: 0 32px; height: 84px;
 }
-.logo {
-  display: flex; align-items: center; gap: 12px; text-decoration: none;
-}
-.logo-mark {
-  width: 54px; height: 54px;
-  display: grid; place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(200,168,75,0.12));
-  border: 1px solid rgba(200,168,75,0.18);
-  box-shadow: 0 10px 24px rgba(13,32,24,0.25);
-  padding: 6px;
-  flex-shrink: 0;
-}
-.logo-mark img {
-  width: 100%; height: 100%; object-fit: contain;
-  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.35));
-}
-.logo-copy {
-  display: flex; flex-direction: column;
-}
-.logo-name {
-  font-family: var(--display);
-  font-size: 1.5rem; font-weight: 700;
-  color: var(--cream); letter-spacing: 0.04em;
-  line-height: 1;
-}
-.logo-sub {
-  font-size: 9px; font-weight: 500;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold); margin-top: 3px;
-}
+/* logo styling moved inline */
 .nav-links {
   display: flex; align-items: center; gap: 4px; list-style: none;
 }
@@ -181,9 +151,7 @@ nav {
 @media(max-width:768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .logo-mark { width: 48px; height: 48px; }
-  .logo-name { font-size: 1.35rem; }
-  .logo-sub { font-size: 8px; }
+  /* logo sizes are controlled inline now */
 }
 
 /* ═══════════════════════════════════
@@ -194,7 +162,7 @@ nav {
   background: linear-gradient(160deg, var(--deep) 0%, var(--forest) 50%, #1e4d30 100%);
   display: flex; align-items: center;
   position: relative; overflow: hidden;
-  padding-top: 70px;
+  padding-top: 84px;
 }
 .hero::before {
   content: '';
@@ -643,10 +611,8 @@ footer {
 <!-- ═══════════ NAVBAR ═══════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="logo" onclick="showPage('home')" aria-label="Zaonex Agritrade Company Limited homepage">
-      <span class="logo-mark" aria-hidden="true">
-        <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo">
-      </span>
+    <a class="logo" onclick="showPage('home')" aria-label="Zaonex Agritrade Company Limited homepage" style="display:flex;align-items:center;gap:14px;text-decoration:none;margin-right:12px;">
+      <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo" style="width:180px;height:150px;object-fit:contain;display:block;">
     </a>
     <ul class="nav-links">
       <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
@@ -709,8 +675,9 @@ footer {
             </div>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-card-stack">
+        <div class="hero-visual" style="position:relative;">
+          <img src="Images/Avocado.webp" alt="Hero visual" style="position:absolute;right:-40px;top:-60px;width:420px;height:520px;object-fit:cover;border-radius:20px;box-shadow:0 12px 64px rgba(13,32,24,0.16);z-index:0;">
+          <div class="hero-card-stack" style="position:relative;z-index:1;">
             <div class="hcard hcard-1">
               <div class="hcard-inner">
                 <div class="hcard-icon">🌾</div>
@@ -784,13 +751,13 @@ footer {
      ABOUT PAGE
 ═══════════════════════════════════ -->
 <div class="page" id="page-about">
-  <div style="height:70px;"></div>
+  <div style="height:84px;"></div>
   <section class="section">
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap">
           <div class="about-img-bg">
-            🌱
+            <img src="Images/Coffee1.webp" alt="Est. Tanzania" style="width:100%;height:100%;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:24px;left:24px;z-index:2;">
               <div style="font-family:var(--display);font-size:1.3rem;font-weight:600;color:var(--cream);">Est. Tanzania</div>
               <div style="font-size:12px;color:rgba(245,240,232,0.6);">Registered with BRELA</div>
@@ -885,7 +852,7 @@ footer {
      PRODUCTS PAGE
 ═══════════════════════════════════ -->
 <div class="page" id="page-products">
-  <div style="height:70px;"></div>
+  <div style="height:84px;"></div>
   <section class="section products-bg">
     <div class="container">
       <div class="products-intro">
@@ -895,7 +862,7 @@ footer {
       </div>
       <div class="products-grid">
         <div class="product-card" data-reveal>
-          <div class="product-img">🌾</div>
+          <div class="product-img"><img src="Images/disiana-caballero-s4mpAZSvcbE-unsplash.webp" alt="Cereals & Grains" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Cereals & Grains</div>
             <div class="product-desc">High-quality Tanzanian cereals grown in the fertile highlands. Rigorously graded, dried to international moisture specifications, and packaged for long-distance shipping.</div>
@@ -905,7 +872,7 @@ footer {
           </div>
         </div>
         <div class="product-card" data-reveal data-reveal-delay="1">
-          <div class="product-img">☕</div>
+          <div class="product-img"><img src="Images/Coffee1.webp" alt="Coffee & Tea" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Coffee & Tea</div>
             <div class="product-desc">Premium Arabica and Robusta coffee from Kilimanjaro, Arusha, and the Southern Highlands. Black tea from the Iringa and Mbeya tea estates.</div>
@@ -915,7 +882,7 @@ footer {
           </div>
         </div>
         <div class="product-card" data-reveal data-reveal-delay="2">
-          <div class="product-img">🥜</div>
+          <div class="product-img"><img src="Images/Cashew.webp" alt="Cashew Nuts & Groundnuts" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Cashew Nuts & Groundnuts</div>
             <div class="product-desc">Tanzania is one of Africa's top cashew producers. We export both raw and processed cashew nuts, as well as groundnuts, to global confectionery and food markets.</div>
@@ -925,7 +892,7 @@ footer {
           </div>
         </div>
         <div class="product-card" data-reveal>
-          <div class="product-img">🌻</div>
+          <div class="product-img"><img src="Images/oil_seeds.webp" alt="Oilseeds" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Oilseeds</div>
             <div class="product-desc">Sunflower, sesame (simsim), and soybean exports for edible oil production and food processing markets globally. Available in bulk and container loads.</div>
@@ -935,7 +902,7 @@ footer {
           </div>
         </div>
         <div class="product-card" data-reveal data-reveal-delay="1">
-          <div class="product-img">🫛</div>
+          <div class="product-img"><img src="Images/Sesame2.webp" alt="Legumes & Pulses" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Legumes & Pulses</div>
             <div class="product-desc">Beans, lentils, chickpeas, and cowpeas from Tanzania's productive southern and northern zones, meeting strict size, moisture, and purity grading standards.</div>
@@ -945,7 +912,7 @@ footer {
           </div>
         </div>
         <div class="product-card" data-reveal data-reveal-delay="2">
-          <div class="product-img">🌶️</div>
+          <div class="product-img"><img src="Images/spyces&cloves.jpeg" alt="Spices & Cloves" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
           <div class="product-body">
             <div class="product-title">Spices & Cloves</div>
             <div class="product-desc">Zanzibar cloves — the world's finest — alongside black pepper, cardamom, cinnamon, and chilli. Packed in airtight food-grade packaging for export.</div>
@@ -1011,7 +978,7 @@ footer {
      SERVICES PAGE
 ═══════════════════════════════════ -->
 <div class="page" id="page-services">
-  <div style="height:70px;"></div>
+  <div style="height:84px;"></div>
   <section class="section">
     <div class="container">
       <div class="services-intro">
@@ -1177,7 +1144,7 @@ footer {
      GALLERY PAGE
 ═══════════════════════════════════ -->
 <div class="page" id="page-gallery">
-  <div style="height:70px;"></div>
+  <div style="height:84px;"></div>
   <section class="section gallery-bg">
     <div class="container">
       <div class="gallery-intro">
@@ -1190,7 +1157,7 @@ footer {
         <div class="gallery-item" data-reveal>
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:220px;">
-              <div class="gallery-emoji">🌾</div>
+              <img src="Images/maiza_harvest.jpeg" alt="Maize Harvest — Dodoma Region" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Maize Harvest — Dodoma Region</div>
@@ -1203,7 +1170,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="1">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:280px;">
-              <div class="gallery-emoji">☕</div>
+              <img src="Images/kilimanjaroCofeeEstate.jpeg" alt="Kilimanjaro Coffee Estates" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Kilimanjaro Coffee Estates</div>
@@ -1216,7 +1183,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="2">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:200px;">
-              <div class="gallery-emoji">🚢</div>
+              <img src="Images/darPort.jpeg" alt="Port of Dar es Salaam" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Port of Dar es Salaam</div>
@@ -1229,7 +1196,7 @@ footer {
         <div class="gallery-item" data-reveal>
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:260px;">
-              <div class="gallery-emoji">🌻</div>
+              <img src="Images/sunflower_field.jpeg" alt="Sunflower Fields — Singida" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Sunflower Fields — Singida</div>
@@ -1242,7 +1209,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="1">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:200px;">
-              <div class="gallery-emoji">📦</div>
+              <img src="Images/packaging&grinding.jpeg" alt="Packaging & Grading Facility" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Packaging & Grading Facility</div>
@@ -1255,7 +1222,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="2">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:240px;">
-              <div class="gallery-emoji">🥜</div>
+              <img src="Images/cashewProcessing.jpeg" alt="Cashew Nut Processing" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Cashew Nut Processing</div>
@@ -1268,7 +1235,7 @@ footer {
         <div class="gallery-item" data-reveal>
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:200px;">
-              <div class="gallery-emoji">🌶️</div>
+              <img src="Images/zanzibarcloves.jpeg" alt="Zanzibar Cloves" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Zanzibar Cloves</div>
@@ -1281,7 +1248,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="1">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:250px;">
-              <div class="gallery-emoji">🤝</div>
+              <img src="Images/farmerCooperative meeting.jpeg" alt="Farmer Cooperative Meeting" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Farmer Cooperative Meeting</div>
@@ -1294,7 +1261,7 @@ footer {
         <div class="gallery-item" data-reveal data-reveal-delay="2">
           <div class="gallery-card">
             <div class="gallery-thumb" style="height:210px;">
-              <div class="gallery-emoji">🏔️</div>
+              <img src="Images/nothernTanzania.jpeg" alt="Northern Highlands Farms" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
             </div>
             <div class="gallery-caption">
               <div class="gallery-cap-title">Northern Highlands Farms</div>
@@ -1321,7 +1288,7 @@ footer {
      CONTACT PAGE
 ═══════════════════════════════════ -->
 <div class="page" id="page-contact">
-  <div style="height:70px;"></div>
+  <div style="height:84px;"></div>
   <section class="section">
     <div class="container">
       <div class="contact-grid">
@@ -1438,13 +1405,11 @@ footer {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo" style="margin-bottom: 12px;">
-          <span class="logo-mark" aria-hidden="true">
-            <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo">
-          </span>
-          <span class="logo-copy">
-            <span class="logo-name">Zaonex</span>
-            <span class="logo-sub">Agritrade Company Limited</span>
+        <div class="logo" style="margin-bottom:12px;display:flex;align-items:center;gap:14px;">
+          <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo" style="width:140px;height:48px;object-fit:contain;display:block;">
+          <span style="display:flex;flex-direction:column;">
+            <span style="font-family:var(--display);font-size:1.6rem;color:var(--cream);">Zaonex</span>
+            <span style="font-size:9px;color:var(--gold);letter-spacing:0.22em;text-transform:uppercase;">Agritrade Company Limited</span>
           </span>
         </div>
         <p class="footer-tagline">Tanzania's trusted agricultural export partner — connecting the finest Tanzanian crops to international markets with quality, integrity, and care.</p>
